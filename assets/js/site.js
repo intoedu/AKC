@@ -17,7 +17,7 @@
         {
           name: '영성 캠프', href: 'camp-spirit.html',
           children: [
-            { name: '(청소년 · 청년) 연합 캠프', href: 'camp-spirit-union.html' },
+            { name: '연합 캠프', href: 'camp-spirit-union.html' },
             { name: '청소년 캠프', href: 'camp-spirit-youth.html' },
             { name: '청년 캠프', href: 'camp-spirit-young.html' }
           ]

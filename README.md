@@ -9,7 +9,7 @@
 |---|---|---|
 | 홈 | - | - |
 | 소개 | 소개 · 인사말 / 캠프 대표 프로그램 | - |
-| 캠프 | 영성 캠프 | (청소년 · 청년) 연합 캠프 / 청소년 캠프 / 청년 캠프 |
+| 캠프 | 영성 캠프 | 연합 캠프 / 청소년 캠프 / 청년 캠프 |
 | 캠프 | 영역 캠프 | 수학 캠프 / 과학 캠프 |
 | 소식 · 안내 | 공지 · 소식 / 갤러리 / 오시는 길 / 자주 묻는 질문 | - |
 
@@ -22,7 +22,7 @@ index.html                 메인(홈)
 about.html                 소개 · 인사말
 about-program.html         캠프 대표 프로그램
 camp-spirit.html           영성 캠프
-camp-spirit-union.html       (청소년 · 청년) 연합 캠프
+camp-spirit-union.html       연합 캠프
 camp-spirit-youth.html       청소년 캠프
 camp-spirit-young.html       청년 캠프
 camp-field.html            영역 캠프
