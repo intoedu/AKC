@@ -264,6 +264,26 @@ a.card{display:block}
 .mapbox{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--gray-2);
   aspect-ratio:16/9;display:grid;place-items:center;text-align:center;padding:30px;color:var(--muted)}
 
+/* 지난 캠프 - 포스터 + 현장 사진 */
+.past{display:grid;grid-template-columns:300px 1fr;gap:22px;align-items:start}
+.poster{margin:0;position:relative;border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--line);aspect-ratio:3/4;background:var(--gray-2)}
+.poster .ph{background:linear-gradient(160deg,rgba(255,255,85,.14),rgba(51,235,181,.16))}
+.poster figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px;
+  font-size:14px;font-weight:700;background:linear-gradient(transparent,rgba(0,0,0,.88))}
+.past-shots{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.past-shots figure{margin:0;position:relative;border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--line);aspect-ratio:4/3;background:var(--gray-2)}
+.past-shots figcaption{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;
+  font-size:13px;font-weight:700;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+@media(max-width:860px){
+  .past{grid-template-columns:1fr}
+  .poster{max-width:340px;margin:0 auto}
+}
+@media(max-width:520px){
+  .past-shots{grid-template-columns:1fr}
+}
+
 /* footer */
 .ftr{padding:64px 0 40px;background:#050505;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 .ftr-top{display:flex;flex-wrap:wrap;gap:44px;justify-content:space-between;margin-bottom:36px}
