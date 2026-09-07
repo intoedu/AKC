@@ -42,6 +42,15 @@ p{margin:0}
 .hdr .wrap>.hdr-cta{justify-self:end}
 .logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:21px;letter-spacing:.04em}
 .logo b{color:var(--mint)}
+/* 로고 이미지 - 원본이 정사각형(1250x1250)이고 글자는 241,503 위치에 743x265 크기라
+   그 부분만 잘라서 보여줍니다. 검정 배경은 screen 합성으로 자연스럽게 사라집니다. */
+.logo-mark{--lh:40px;position:relative;overflow:hidden;flex:none;
+  height:var(--lh);width:calc(var(--lh) * 743 / 265)}
+.logo-mark img{position:absolute;max-width:none;mix-blend-mode:screen;
+  height:calc(var(--lh) * 1250 / 265);
+  left:calc(var(--lh) * -241 / 265);
+  top:calc(var(--lh) * -503 / 265)}
+.ftr .logo-mark{--lh:34px}
 .logo small{display:block;font-size:10px;font-weight:600;letter-spacing:.18em;color:var(--muted-2);line-height:1}
 .logo .lt{display:flex;flex-direction:column;gap:4px}
 

@@ -100,8 +100,10 @@
   var headerHTML =
     '<header class="hdr" id="hdr"><div class="wrap">' +
       '<a class="logo" href="index.html">' +
-        '<span class="lt"><span>A<b>K</b>C</span>' +
-        '<small>ARISE KOREA CAMP</small></span>' +
+        '<span class="lt">' +
+          '<span class="logo-mark"><img src="assets/img/logo.png" alt="AKC"></span>' +
+          '<small>ARISE KOREA CAMP</small>' +
+        '</span>' +
       '</a>' +
       '<nav aria-label="주요 메뉴"><ul class="gnb">' + gnbHTML() + '</ul></nav>' +
       '<a class="hdr-cta" href="' + CTA.href + '">' + CTA.name + '</a>' +
@@ -114,7 +116,8 @@
     '<footer class="ftr"><div class="wrap">' +
       '<div class="ftr-top">' +
         '<div style="max-width:340px">' +
-          '<div class="logo" style="margin-bottom:14px"><span class="lt"><span>A<b>K</b>C</span>' +
+          '<div class="logo" style="margin-bottom:14px"><span class="lt">' +
+          '<span class="logo-mark"><img src="assets/img/logo.png" alt="AKC"></span>' +
           '<small>ARISE KOREA CAMP</small></span></div>' +
           '<p>캠프보다 캠프 이후가 더 뜨거운 캠프.<br>전국의 지역교회와 공동체가 함께 주도하는 연합 캠프입니다.</p>' +
         '</div>' +
