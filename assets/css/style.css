@@ -53,6 +53,8 @@ p{margin:0}
 .ftr .logo-mark{--lh:24px}
 .logo small{display:block;text-align:center;font-size:9px;font-weight:600;letter-spacing:.18em;color:var(--muted-2);line-height:1}
 .logo .lt{display:flex;flex-direction:column;align-items:center;gap:5px}
+/* 헤더 로고만 살짝 아래로 (로고 + 풀네임 함께) */
+.hdr .logo{transform:translateY(4px)}
 
 /* 메뉴 칸이 헤더 높이를 꽉 채우도록 nav까지 높이를 물려줍니다 */
 /* 로고와 신청 버튼 사이 공간을 nav가 모두 차지하고, 그 안에서 메뉴를 가운데로 */
