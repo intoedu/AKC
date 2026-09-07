@@ -5,49 +5,56 @@
   /* 메뉴 구조: 대메뉴 3개 + 세부메뉴 + 세부세부메뉴 (홈은 좌측 로고로 이동) */
   var MENU = [
     {
-      name: '소개', href: 'about.html',
+      name: '소개', href: 'about',
       children: [
-        { name: '소개 · 인사말', href: 'about.html' },
-        { name: '캠프 대표 프로그램', href: 'about-program.html' }
+        { name: '소개 · 인사말', href: 'about' },
+        { name: '캠프 대표 프로그램', href: 'about-program' }
       ]
     },
     {
-      name: '캠프', href: 'camp-spirit.html',
+      name: '캠프', href: 'camp-spirit',
       children: [
         {
-          name: '영성 캠프', href: 'camp-spirit.html',
+          name: '영성 캠프', href: 'camp-spirit',
           children: [
-            { name: '연합 캠프', href: 'camp-spirit-union.html' },
-            { name: '청소년 캠프', href: 'camp-spirit-youth.html' },
-            { name: '청년 캠프', href: 'camp-spirit-young.html' }
+            { name: '연합 캠프', href: 'camp-spirit-union' },
+            { name: '청소년 캠프', href: 'camp-spirit-youth' },
+            { name: '청년 캠프', href: 'camp-spirit-young' }
           ]
         },
         {
-          name: '영역 캠프', href: 'camp-field.html',
+          name: '영역 캠프', href: 'camp-field',
           children: [
-            { name: '수학 캠프', href: 'camp-field-math.html' },
-            { name: '과학 캠프', href: 'camp-field-science.html' }
+            { name: '수학 캠프', href: 'camp-field-math' },
+            { name: '과학 캠프', href: 'camp-field-science' }
           ]
         }
       ]
     },
     {
-      name: '소식 · 안내', href: 'news.html',
+      name: '소식 · 안내', href: 'news',
       children: [
-        { name: '공지 · 소식', href: 'news.html' },
-        { name: '갤러리', href: 'gallery.html' },
-        { name: '오시는 길', href: 'location.html' },
-        { name: '자주 묻는 질문', href: 'faq.html' }
+        { name: '공지 · 소식', href: 'news' },
+        { name: '갤러리', href: 'gallery' },
+        { name: '오시는 길', href: 'location' },
+        { name: '자주 묻는 질문', href: 'faq' }
       ]
     }
   ];
 
-  var CTA = { name: '신청 · 문의하기', href: 'contact.html' };
+  var CTA = { name: '신청 · 문의하기', href: 'contact' };
 
-  var here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  /* 주소는 /about, /about.html, /, /index.html 어느 형태로 들어와도 같은 페이지로 봅니다 */
+  function pageKey(path) {
+    var last = (path.split('?')[0].split('#')[0].split('/').pop() || '').toLowerCase();
+    last = last.replace(/\.html$/, '');
+    return (last === '' || last === '.' || last === 'index') ? 'index' : last;
+  }
+
+  var here = pageKey(location.pathname);
 
   function isCur(item) {
-    if (item.href.toLowerCase() === here) return true;
+    if (pageKey(item.href) === here) return true;
     return (item.children || []).some(isCur);
   }
 
@@ -58,7 +65,7 @@
     return '<div class="mg-col">' +
       '<a class="mg-ttl" href="' + href + '">' + esc(title) + '</a>' +
       (items.length ? '<ul class="mg-list">' + items.map(function (d) {
-        return '<li><a class="' + (d.href.toLowerCase() === here ? 'cur' : '') + '" href="' + d.href + '">' +
+        return '<li><a class="' + (pageKey(d.href) === here ? 'cur' : '') + '" href="' + d.href + '">' +
           esc(d.name) + '</a></li>';
       }).join('') + '</ul>' : '') +
       '</div>';
@@ -99,7 +106,7 @@
 
   var headerHTML =
     '<header class="hdr" id="hdr"><div class="wrap">' +
-      '<a class="logo" href="index.html">' +
+      '<a class="logo" href="./">' +
         '<span class="lt">' +
           '<span class="logo-mark"><img src="assets/img/logo.png" alt="AKC"></span>' +
           '<small>ARISE KOREA CAMP</small>' +
@@ -122,22 +129,22 @@
           '<p>캠프보다 캠프 이후가 더 뜨거운 캠프.<br>전국의 지역교회와 공동체가 함께 주도하는 연합 캠프입니다.</p>' +
         '</div>' +
         '<div><h4>바로가기</h4><ul>' +
-          '<li><a href="about.html">소개 · 인사말</a></li>' +
-          '<li><a href="about-program.html">캠프 대표 프로그램</a></li>' +
-          '<li><a href="camp-spirit.html">영성 캠프</a></li>' +
-          '<li><a href="camp-field.html">영역 캠프</a></li>' +
+          '<li><a href="about">소개 · 인사말</a></li>' +
+          '<li><a href="about-program">캠프 대표 프로그램</a></li>' +
+          '<li><a href="camp-spirit">영성 캠프</a></li>' +
+          '<li><a href="camp-field">영역 캠프</a></li>' +
         '</ul></div>' +
         '<div><h4>안내</h4><ul>' +
-          '<li><a href="news.html">공지 · 소식</a></li>' +
-          '<li><a href="gallery.html">갤러리</a></li>' +
-          '<li><a href="location.html">오시는 길</a></li>' +
-          '<li><a href="faq.html">자주 묻는 질문</a></li>' +
+          '<li><a href="news">공지 · 소식</a></li>' +
+          '<li><a href="gallery">갤러리</a></li>' +
+          '<li><a href="location">오시는 길</a></li>' +
+          '<li><a href="faq">자주 묻는 질문</a></li>' +
         '</ul></div>' +
         '<div><h4>문의</h4><ul>' +
           '<li>대표 연락처 · <a href="tel:01029779586">010-2977-9586</a></li>' +
           '<li><a href="mailto:AriseKoreaCamp@gmail.com">AriseKoreaCamp@gmail.com</a></li>' +
           '<li>주소 · 운영 시간은 캠프마다 다릅니다</li>' +
-          '<li><a href="contact.html">신청 · 문의하기</a></li>' +
+          '<li><a href="contact">신청 · 문의하기</a></li>' +
         '</ul></div>' +
       '</div>' +
       '<div class="ftr-bot"><span>&copy; ' + new Date().getFullYear() + ' AKC (Arise Korea Camp). All rights reserved.</span>' +
