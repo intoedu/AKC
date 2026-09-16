@@ -7,7 +7,7 @@
     {
       name: '소개', href: 'about',
       children: [
-        { name: '소개 · 인사말', href: 'about' },
+        { name: 'AKC 소개', href: 'about' },
         { name: '캠프 대표 프로그램', href: 'about-program' }
       ]
     },
@@ -131,7 +131,7 @@
           '<p>캠프보다 캠프 이후가 더 뜨거운 캠프.<br>전국의 지역교회와 공동체가 함께 주도하는 연합 캠프입니다.</p>' +
         '</div>' +
         '<div><h4>바로가기</h4><ul>' +
-          '<li><a href="about">소개 · 인사말</a></li>' +
+          '<li><a href="about">AKC 소개</a></li>' +
           '<li><a href="about-program">캠프 대표 프로그램</a></li>' +
           '<li><a href="camp-spirit">영성 캠프</a></li>' +
           // [숨김] 영역 캠프
@@ -146,7 +146,7 @@
         '<div><h4>문의</h4><ul>' +
           '<li>대표 연락처 · <a href="tel:01029779586">010-2977-9586</a></li>' +
           '<li><a href="mailto:AriseKoreaCamp@gmail.com">AriseKoreaCamp@gmail.com</a></li>' +
-          '<li>주소 · 운영 시간은 캠프마다 다릅니다</li>' +
+          '<li>캠프 장소 · 태안 수양원 (자체 운영 시설)</li>' +
           '<li><a href="contact">신청 · 문의하기</a></li>' +
         '</ul></div>' +
       '</div>' +
