@@ -22,6 +22,7 @@
             { name: '청년 캠프', href: 'camp-spirit-young' }
           ]
         },
+        /* [숨김] 영역 캠프 - 다시 열 때 이 주석을 풀어주세요
         {
           name: '영역 캠프', href: 'camp-field',
           children: [
@@ -29,6 +30,7 @@
             { name: '과학 캠프', href: 'camp-field-science' }
           ]
         }
+        */
       ]
     },
     {
@@ -132,7 +134,8 @@
           '<li><a href="about">소개 · 인사말</a></li>' +
           '<li><a href="about-program">캠프 대표 프로그램</a></li>' +
           '<li><a href="camp-spirit">영성 캠프</a></li>' +
-          '<li><a href="camp-field">영역 캠프</a></li>' +
+          // [숨김] 영역 캠프
+          // '<li><a href="camp-field">영역 캠프</a></li>' +
         '</ul></div>' +
         '<div><h4>안내</h4><ul>' +
           '<li><a href="news">공지 · 소식</a></li>' +
