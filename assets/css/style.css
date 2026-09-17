@@ -312,12 +312,6 @@ a.card{display:block}
 .poster-slot img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:contain;background:#000}
 .poster-slot .ph{background:linear-gradient(160deg,rgba(255,255,85,.12),rgba(51,235,181,.14))}
 .poster-slot .ph span{line-height:1.6}
-.poster-slot a{position:absolute;inset:0;z-index:1;display:block}
-.poster-slot a::after{content:"크게 보기 ↗";position:absolute;right:10px;bottom:10px;z-index:2;
-  padding:5px 11px;border-radius:999px;background:rgba(0,0,0,.72);border:1px solid var(--line);
-  color:#fff;font-size:12px;font-weight:700;opacity:0;transition:opacity .2s}
-.poster-slot a:hover::after,.poster-slot a:focus-visible::after{opacity:1}
-@media (hover:none){.poster-slot a::after{opacity:1}}
 
 /* 캠프 주제 REBUILD */
 .theme{display:grid;grid-template-columns:320px 1fr;gap:52px;align-items:center}
