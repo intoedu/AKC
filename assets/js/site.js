@@ -147,7 +147,7 @@
           '<li>대표 연락처 · <a href="tel:01029779586">010-2977-9586</a></li>' +
           '<li><a href="mailto:AriseKoreaCamp@gmail.com">AriseKoreaCamp@gmail.com</a></li>' +
           '<li><a href="https://www.instagram.com/arisekoreacamp" target="_blank" rel="noopener">Instagram @arisekoreacamp</a></li>' +
-          '<li>캠프 장소 · 태안 수양원 (자체 운영 시설)</li>' +
+          '<li>캠프 장소 · 태안수양관 (자체 운영 시설)</li>' +
           '<li><a href="contact">신청 · 문의하기</a></li>' +
         '</ul></div>' +
       '</div>' +
