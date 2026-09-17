@@ -301,6 +301,81 @@ a.card{display:block}
   .past-shots{grid-template-columns:1fr}
 }
 
+/* 말씀 구분 표시 (슬로건 말씀 / 주제 말씀) */
+.verse-label{display:block;margin-bottom:12px;font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--mint)}
+
+/* 포스터 자리 - 이미지 파일이 없으면 자리 표시가 보입니다 */
+.poster-slot{margin:0;position:relative;border-radius:14px;overflow:hidden;
+  border:1px solid var(--line);aspect-ratio:1/1.414;background:var(--gray-2)}
+.poster-slot img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:contain;background:#000}
+.poster-slot .ph{background:linear-gradient(160deg,rgba(255,255,85,.12),rgba(51,235,181,.14))}
+.poster-slot .ph span{line-height:1.6}
+
+/* 캠프 주제 REBUILD */
+.theme{display:grid;grid-template-columns:320px 1fr;gap:52px;align-items:center}
+.theme-title{margin-top:10px;font-size:clamp(52px,8vw,96px);font-weight:900;letter-spacing:.04em;line-height:1;color:var(--yellow)}
+.theme-sub{margin-top:16px;font-size:clamp(20px,3vw,28px);font-weight:800;letter-spacing:-.02em}
+.theme-desc{margin-top:16px;max-width:620px;color:var(--muted)}
+.theme .verse{margin-top:28px}
+.flow{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.flow li{position:relative;padding:26px 24px;background:var(--gray-2);border:1px solid var(--line);border-radius:var(--radius)}
+.flow li:nth-child(2){border-color:rgba(255,255,85,.5)}
+.flow li:not(:last-child)::after{content:"→";position:absolute;top:50%;right:-17px;z-index:2;
+  width:24px;height:24px;margin-top:-12px;display:grid;place-items:center;border-radius:50%;
+  background:var(--black);color:var(--mint);font-size:13px;font-weight:800}
+.flow-no{font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--mint)}
+.flow li:nth-child(2) .flow-no{color:var(--yellow)}
+.flow h3{margin-top:10px;font-size:18px}
+.flow p{margin-top:10px;font-size:14.5px;color:var(--muted)}
+
+/* 참가 후기 */
+.reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.review{margin:0;position:relative;display:flex;flex-direction:column;padding:36px 30px 26px;
+  background:var(--gray-2);border:1px solid var(--line);border-radius:var(--radius)}
+.review::before{content:"\201C";position:absolute;top:8px;right:26px;font-family:Georgia,serif;
+  font-size:76px;line-height:1;color:rgba(255,255,85,.22)}
+.review blockquote{margin:0;flex:1}
+.review blockquote p{font-size:15px;line-height:1.9;color:rgba(255,255,255,.78)}
+.review blockquote p+p{margin-top:12px}
+.review figcaption{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.review figcaption b{color:var(--yellow)}
+
+/* 왜 AKC인가 */
+.reasons{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.reasons li{display:grid;grid-template-columns:72px minmax(220px,330px) 1fr;gap:24px;align-items:baseline;
+  padding:26px 6px;border-bottom:1px solid var(--line)}
+.r-no{font-size:26px;font-weight:900;letter-spacing:-.02em;color:var(--yellow)}
+.reasons h3{font-size:19px}
+.reasons p{font-size:15px;color:var(--muted)}
+
+/* 지난 캠프 기록 */
+.archive{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.archive-item{display:grid;grid-template-columns:190px 1fr;gap:24px;align-items:start;padding:22px;
+  background:var(--gray-2);border:1px solid var(--line);border-radius:var(--radius)}
+.archive-body{padding-top:6px}
+.archive-body .num{font-size:13px;font-weight:800;letter-spacing:.1em;color:var(--mint)}
+.archive-body h3{margin-top:8px;font-size:20px}
+.archive-body p{margin-top:10px;font-size:15px;color:var(--muted)}
+
+@media(max-width:960px){
+  .theme{grid-template-columns:1fr;gap:32px}
+  .theme .poster-slot{order:2;width:100%;max-width:280px}
+  .flow{grid-template-columns:repeat(2,1fr)}
+  .flow li:not(:last-child)::after{display:none}
+  .archive{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .reviews{grid-template-columns:1fr}
+  .reasons li{grid-template-columns:48px 1fr;gap:6px 14px}
+  .reasons li p{grid-column:2}
+  .r-no{font-size:21px}
+}
+@media(max-width:560px){
+  .flow{grid-template-columns:1fr}
+  .archive-item{grid-template-columns:1fr}
+  .archive-item .poster-slot{max-width:240px}
+}
+
 /* footer */
 .ftr{padding:64px 0 40px;background:#050505;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 .ftr-top{display:flex;flex-wrap:wrap;gap:44px;justify-content:space-between;margin-bottom:36px}
