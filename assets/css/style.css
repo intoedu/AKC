@@ -364,6 +364,10 @@ a.card{display:block}
 .archive-body .num{font-size:13px;font-weight:800;letter-spacing:.1em;color:var(--mint)}
 .archive-body h3{margin-top:8px;font-size:20px}
 .archive-body p{margin-top:10px;font-size:15px;color:var(--muted)}
+.archive-meta{margin:14px 0 0;padding-top:14px;border-top:1px solid var(--line);display:grid;gap:8px;font-size:14px}
+.archive-meta div{display:grid;grid-template-columns:40px 1fr;gap:10px}
+.archive-meta dt{font-weight:700;color:var(--mint)}
+.archive-meta dd{margin:0;line-height:1.7;color:var(--muted)}
 
 @media(max-width:960px){
   .theme{grid-template-columns:1fr;gap:32px}
