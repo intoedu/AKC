@@ -147,6 +147,8 @@ main{padding-top:var(--nav-h)}
 .apply-note{margin-top:14px;font-size:14px;color:var(--muted)}
 .apply-note b{color:var(--white)}
 .apply-note.flash{animation:applyFlash 1.2s ease}
+.btn[aria-disabled="true"]{opacity:.55;cursor:default}
+.btn[aria-disabled="true"]:hover{transform:none;box-shadow:none}
 @keyframes applyFlash{0%,100%{color:var(--muted)}20%,60%{color:var(--yellow)}}
 
 .btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;
