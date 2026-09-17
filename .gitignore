@@ -4,3 +4,5 @@ node_modules/
 assets/img/posters/AKC 홈페이지 포스터/
 # 현장 사진 원본 - 웹용으로 변환한 assets/img/site/ 만 올립니다
 assets/img/photos/
+# 파비콘 원본(1250px) - 사이트에는 180px로 줄인 favicon.png만 올립니다
+assets/img/favicon-original.png
