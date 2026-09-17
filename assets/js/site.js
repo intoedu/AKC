@@ -37,7 +37,9 @@
       name: '소식 · 안내', href: 'news',
       children: [
         { name: '공지 · 소식', href: 'news' },
+        /* [숨김] 갤러리 - 2027 겨울 5~7차 사진을 넣을 때 주석을 풀어주세요
         { name: '갤러리', href: 'gallery' },
+        */
         { name: '오시는 길', href: 'location' },
         { name: '자주 묻는 질문', href: 'faq' }
       ]
@@ -139,7 +141,8 @@
         '</ul></div>' +
         '<div><h4>안내</h4><ul>' +
           '<li><a href="news">공지 · 소식</a></li>' +
-          '<li><a href="gallery">갤러리</a></li>' +
+          // [숨김] 갤러리 - 2027 겨울 5~7차 사진을 넣을 때 주석을 풀어주세요
+          // '<li><a href="gallery">갤러리</a></li>' +
           '<li><a href="location">오시는 길</a></li>' +
           '<li><a href="faq">자주 묻는 질문</a></li>' +
         '</ul></div>' +
