@@ -1,7 +1,7 @@
 /* ===== AKC · Arise Korea Camp ===== */
 
-/* 프리텐다드 (Pretendard Variable, 동적 서브셋 - 필요한 글자만 내려받아 빠릅니다) */
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+/* 프리텐다드 폰트는 각 HTML <head>에서 <link>로 불러옵니다
+   (CSS 안의 @import는 이 파일을 다 받은 뒤에야 시작되어 느립니다) */
 
 :root{
   --black:#000000;
@@ -42,14 +42,9 @@ p{margin:0}
 .hdr .wrap>.hdr-cta{justify-self:end}
 .logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:21px;letter-spacing:.04em}
 .logo b{color:var(--mint)}
-/* 로고 이미지 - 원본이 정사각형(1250x1250)이고 글자는 241,503 위치에 743x265 크기라
-   그 부분만 잘라서 보여줍니다. 검정 배경은 screen 합성으로 자연스럽게 사라집니다. */
-.logo-mark{--lh:26px;position:relative;overflow:hidden;flex:none;
-  height:var(--lh);width:calc(var(--lh) * 743 / 265)}
-.logo-mark img{position:absolute;max-width:none;mix-blend-mode:screen;
-  height:calc(var(--lh) * 1250 / 265);
-  left:calc(var(--lh) * -241 / 265);
-  top:calc(var(--lh) * -503 / 265)}
+/* 로고 이미지 - 글자 부분만 잘라 만든 투명 배경 PNG (assets/img/logo-mark.png, 3배 해상도) */
+.logo-mark{--lh:26px;display:block;flex:none;height:var(--lh)}
+.logo-mark img{display:block;height:100%;width:auto}
 .ftr .logo-mark{--lh:24px}
 .logo small{display:block;text-align:center;font-size:9px;font-weight:600;letter-spacing:.18em;color:var(--muted-2);line-height:1}
 .logo .lt{display:flex;flex-direction:column;align-items:center;gap:5px}
@@ -400,8 +395,7 @@ section[id],.card[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
 .hero.photo::before,.phead.photo::before,.band.photo::before{content:"";position:absolute;inset:0;z-index:-2;
   background-position:center;background-size:cover;background-repeat:no-repeat}
 .hero.photo::after,.phead.photo::after,.band.photo::after{content:"";position:absolute;inset:0;z-index:-1}
-/* 상단 · 하단 배경은 살짝 흐리게 (옷 글씨 등이 읽히지 않도록) */
-.phead.photo::before,.band.photo::before{inset:-14px;filter:blur(2.5px)}
+/* 상단 · 하단 배경의 흐림은 사진 파일에 미리 적용했습니다 (CSS 흐림 효과는 화면 그리기가 느려짐) */
 .hero.photo::before{background-image:url("../img/site/hero.jpg");background-position:center 30%}
 .hero.photo::after{background:
   radial-gradient(1000px 620px at 78% 8%,rgba(51,235,181,.16),transparent 62%),
@@ -411,7 +405,9 @@ section[id],.card[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
 .phead.photo::after{background:
   radial-gradient(760px 380px at 82% 0%,rgba(51,235,181,.14),transparent 62%),
   linear-gradient(90deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.85) 50%,rgba(0,0,0,.62) 100%)}
-.band.photo::before{background-image:url("../img/site/band-together.jpg");background-position:center 55%}
+/* 하단 사진은 화면 가까이 왔을 때 받습니다 (site.js가 bg-in 클래스를 붙임) */
+.band.photo::before{background-position:center 55%}
+.band.photo.bg-in::before{background-image:url("../img/site/band-together.jpg")}
 .band.photo::after{background:
   linear-gradient(120deg,rgba(51,235,181,.14),rgba(255,255,85,.08)),
   linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8))}
@@ -433,6 +429,15 @@ section[id],.card[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
     linear-gradient(0deg,#000 0%,rgba(0,0,0,0) 28%),
     linear-gradient(rgba(0,0,0,.84),rgba(0,0,0,.84))}
   .phead.photo::after{background:linear-gradient(rgba(0,0,0,.86),rgba(0,0,0,.86))}
+  /* 휴대폰에서는 작은 사진 */
+  .hero.photo::before{background-image:url("../img/site/hero-m.jpg");background-position:center}
+  .band.photo.bg-in::before{background-image:url("../img/site/band-together-m.jpg")}
+  .ph-about::before{background-image:url("../img/site/ph-about-m.jpg")}
+  .ph-program::before{background-image:url("../img/site/ph-program-m.jpg")}
+  .ph-spirit::before{background-image:url("../img/site/ph-spirit-m.jpg")}
+  .ph-union::before{background-image:url("../img/site/ph-union-m.jpg")}
+  .ph-youth::before{background-image:url("../img/site/ph-youth-m.jpg")}
+  .ph-young::before{background-image:url("../img/site/ph-young-m.jpg")}
   .card-photo{margin:-24px -24px 20px}
 }
 

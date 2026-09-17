@@ -112,7 +112,7 @@
     '<header class="hdr" id="hdr"><div class="wrap">' +
       '<a class="logo" href="./">' +
         '<span class="lt">' +
-          '<span class="logo-mark"><img src="assets/img/logo.png" alt="AKC"></span>' +
+          '<span class="logo-mark"><img src="assets/img/logo-mark.png" alt="AKC" width="219" height="78"></span>' +
           '<small>ARISE KOREA CAMP</small>' +
         '</span>' +
       '</a>' +
@@ -128,7 +128,7 @@
       '<div class="ftr-top">' +
         '<div style="max-width:340px">' +
           '<div class="logo" style="margin-bottom:14px"><span class="lt">' +
-          '<span class="logo-mark"><img src="assets/img/logo.png" alt="AKC"></span>' +
+          '<span class="logo-mark"><img src="assets/img/logo-mark.png" alt="AKC" width="219" height="78"></span>' +
           '<small>ARISE KOREA CAMP</small></span></div>' +
           '<p>캠프보다 캠프 이후가 더 뜨거운 캠프.<br>전국의 지역교회와 공동체가 함께 주도하는 연합 캠프입니다.</p>' +
         '</div>' +
@@ -194,9 +194,26 @@
     } else {
       items.forEach(function (el) { el.classList.add('in'); });
     }
+
+    /* 하단 배경 사진은 화면 가까이 왔을 때 받기 */
+    var lazyBg = document.querySelectorAll('.band.photo');
+    if ('IntersectionObserver' in window) {
+      var bgio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('bg-in'); bgio.unobserve(e.target); }
+        });
+      }, { rootMargin: '600px 0px' });
+      lazyBg.forEach(function (el) { bgio.observe(el); });
+    } else {
+      lazyBg.forEach(function (el) { el.classList.add('bg-in'); });
+    }
   }
 
-  if (document.readyState === 'loading') {
+  /* 이 스크립트는 각 페이지 맨 아래에 있어 헤더·푸터 자리가 이미 있습니다.
+     문서 로딩 완료를 기다리지 않고 바로 그려서 로고 · 메뉴가 늦게 뜨지 않게 합니다. */
+  if (document.getElementById('site-header') || document.readyState !== 'loading') {
+    mount();
+  } else {
     document.addEventListener('DOMContentLoaded', mount);
-  } else { mount(); }
+  }
 })();
