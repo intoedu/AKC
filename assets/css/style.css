@@ -394,6 +394,48 @@ section[id],.card[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
 .sc-safe li span{display:block;margin-top:4px;font-size:14.5px;color:var(--muted)}
 @media(max-width:760px){.sc-safe{grid-template-columns:1fr;gap:18px;padding:24px}}
 
+/* 사진 배경 - 흑백 사진 위에 어두운 막을 깔아 글자를 읽기 쉽게 합니다
+   (사진 파일: assets/img/site/, 얼굴이 드러나지 않는 뒷모습 · 실루엣 위주) */
+.hero.photo,.phead.photo,.band.photo{position:relative;isolation:isolate;overflow:hidden;background:var(--black)}
+.hero.photo::before,.phead.photo::before,.band.photo::before{content:"";position:absolute;inset:0;z-index:-2;
+  background-position:center;background-size:cover;background-repeat:no-repeat}
+.hero.photo::after,.phead.photo::after,.band.photo::after{content:"";position:absolute;inset:0;z-index:-1}
+/* 상단 · 하단 배경은 살짝 흐리게 (옷 글씨 등이 읽히지 않도록) */
+.phead.photo::before,.band.photo::before{inset:-14px;filter:blur(2.5px)}
+.hero.photo::before{background-image:url("../img/site/hero.jpg");background-position:center 30%}
+.hero.photo::after{background:
+  radial-gradient(1000px 620px at 78% 8%,rgba(51,235,181,.16),transparent 62%),
+  radial-gradient(880px 540px at 8% 92%,rgba(255,255,85,.10),transparent 60%),
+  linear-gradient(0deg,#000 0%,rgba(0,0,0,0) 28%),
+  linear-gradient(90deg,rgba(0,0,0,.93) 0%,rgba(0,0,0,.8) 45%,rgba(0,0,0,.5) 100%)}
+.phead.photo::after{background:
+  radial-gradient(760px 380px at 82% 0%,rgba(51,235,181,.14),transparent 62%),
+  linear-gradient(90deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.85) 50%,rgba(0,0,0,.62) 100%)}
+.band.photo::before{background-image:url("../img/site/band-together.jpg");background-position:center 55%}
+.band.photo::after{background:
+  linear-gradient(120deg,rgba(51,235,181,.14),rgba(255,255,85,.08)),
+  linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8))}
+.ph-about::before{background-image:url("../img/site/ph-about.jpg")}
+.ph-program::before{background-image:url("../img/site/ph-program.jpg")}
+.ph-spirit::before{background-image:url("../img/site/ph-spirit.jpg")}
+.ph-union::before{background-image:url("../img/site/ph-union.jpg")}
+.ph-youth::before{background-image:url("../img/site/ph-youth.jpg")}
+.ph-young::before{background-image:url("../img/site/ph-young.jpg")}
+
+/* 카드 상단 사진 */
+.card-photo{margin:-30px -30px 22px;aspect-ratio:16/10;overflow:hidden;background:var(--gray-3);
+  border-radius:calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0}
+.card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .card-photo img{transform:scale(1.04)}
+
+@media(max-width:640px){
+  .hero.photo::after{background:
+    linear-gradient(0deg,#000 0%,rgba(0,0,0,0) 28%),
+    linear-gradient(rgba(0,0,0,.84),rgba(0,0,0,.84))}
+  .phead.photo::after{background:linear-gradient(rgba(0,0,0,.86),rgba(0,0,0,.86))}
+  .card-photo{margin:-24px -24px 20px}
+}
+
 /* footer */
 .ftr{padding:64px 0 40px;background:#050505;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 .ftr-top{display:flex;flex-wrap:wrap;gap:44px;justify-content:space-between;margin-bottom:36px}
