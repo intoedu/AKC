@@ -142,6 +142,12 @@ main{padding-top:var(--nav-h)}
 .hero h1 em{font-style:normal;color:var(--yellow)}
 .hero .lead{margin-top:22px;max-width:660px;font-size:clamp(15px,2vw,19px);color:var(--muted);line-height:1.85}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.hero-note{margin-top:18px;font-size:14px;color:var(--muted)}
+.hero-note b{color:var(--yellow);font-weight:700}
+.apply-note{margin-top:14px;font-size:14px;color:var(--muted)}
+.apply-note b{color:var(--white)}
+.apply-note.flash{animation:applyFlash 1.2s ease}
+@keyframes applyFlash{0%,100%{color:var(--muted)}20%,60%{color:var(--yellow)}}
 
 .btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;
   font-weight:800;font-size:16px;transition:transform .2s,box-shadow .2s,background .2s,color .2s,border-color .2s}
