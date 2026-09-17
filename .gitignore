@@ -1,2 +1,4 @@
 .claude/
 node_modules/
+# 포스터 원본(대용량 PNG) - 웹용 JPG만 올립니다
+assets/img/posters/AKC 홈페이지 포스터/
