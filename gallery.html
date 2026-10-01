@@ -20,17 +20,21 @@
 <meta name="twitter:description" content="AKC 캠프 현장 사진 갤러리. 예배, 말씀, 부스 프로그램, 야외 활동, 기도, 조별 나눔, 레크레이션 등 캠프의 순간들.">
 <meta name="twitter:image" content="https://intoedu.github.io/AKC/assets/img/og.png?v=2">
 <link rel="icon" href="assets/img/favicon.png">
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<meta name="theme-color" content="#1A1A1A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap">
+<script>document.documentElement.classList.add('js');</script>
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="preload" as="image" href="assets/img/site/ph-gallery.jpg" media="(min-width: 641px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/site/ph-gallery-m.jpg" media="(max-width: 640px)" fetchpriority="high">
 </head>
 <body>
 <div id="site-header"></div>
 
-<!-- [숨김] 갤러리 페이지 본문 - 2027 겨울 5~7차 사진을 넣을 때 이 주석을 풀어주세요
 <main>
-  <section class="phead">
+  <section class="phead photo ph-gallery">
     <div class="wrap">
       <p class="crumb">홈 &nbsp;›&nbsp; <b>소식 · 안내</b> &nbsp;›&nbsp; 갤러리</p>
       <h1>갤러리</h1>
@@ -40,21 +44,24 @@
 
   <section class="sec">
     <div class="wrap">
+      <!-- 사진 추가: assets/img/gallery/ 에 작은 사진(가로 600px)과 큰 사진(가로 1200px)을 넣고
+           아래 figure 한 줄을 복사해 파일 이름과 이름표만 바꾸면 됩니다. 누르면 큰 사진이 열립니다. -->
       <div class="gal">
-        <figure class="rv"><div class="ph"><div><div class="e">♪</div><span>사진 준비 중</span></div></div><figcaption>예배</figcaption></figure>
-        <figure class="rv"><div class="ph"><div><div class="e">📖</div><span>사진 준비 중</span></div></div><figcaption>말씀</figcaption></figure>
-        <figure class="rv"><div class="ph"><div><div class="e">▣</div><span>사진 준비 중</span></div></div><figcaption>부스 프로그램</figcaption></figure>
-        <figure class="rv"><div class="ph"><div><div class="e">▣</div><span>사진 준비 중</span></div></div><figcaption>부스 프로그램</figcaption></figure>
-        <figure class="rv"><div class="ph"><div><div class="e">☀</div><span>사진 준비 중</span></div></div><figcaption>야외 활동</figcaption></figure>
-        <figure class="rv"><div class="ph"><div><div class="e">☀</div><span>사진 준비 중</span></div></div><figcaption>야외 활동</figcaption></figure>
-        <figure class="rv"><div class="ph"><div><div class="e">🕯</div><span>사진 준비 중</span></div></div><figcaption>기도</figcaption></figure>
-        <figure class="rv"><div class="ph"><div><div class="e">◎</div><span>사진 준비 중</span></div></div><figcaption>조별 나눔</figcaption></figure>
-        <figure class="rv"><div class="ph"><div><div class="e">✦</div><span>사진 준비 중</span></div></div><figcaption>레크레이션</figcaption></figure>
+        <figure class="rv" data-full="assets/img/gallery/worship-1200.jpg"><img src="assets/img/gallery/worship-600.jpg" srcset="assets/img/gallery/worship-600.jpg 600w, assets/img/gallery/worship-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 예배 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>예배</figcaption></figure>
+        <figure class="rv" data-full="assets/img/gallery/word-1200.jpg"><img src="assets/img/gallery/word-600.jpg" srcset="assets/img/gallery/word-600.jpg 600w, assets/img/gallery/word-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 말씀 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>말씀</figcaption></figure>
+        <figure class="rv tall" data-full="assets/img/gallery/booth1-1200.jpg"><img src="assets/img/gallery/booth1-600.jpg" srcset="assets/img/gallery/booth1-600.jpg 600w, assets/img/gallery/booth1-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 부스 프로그램 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>부스 프로그램</figcaption></figure>
+        <figure class="rv" data-full="assets/img/gallery/booth2-1200.jpg"><img src="assets/img/gallery/booth2-600.jpg" srcset="assets/img/gallery/booth2-600.jpg 600w, assets/img/gallery/booth2-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 부스 프로그램 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>부스 프로그램</figcaption></figure>
+        <figure class="rv" data-full="assets/img/gallery/outdoor1-1200.jpg"><img src="assets/img/gallery/outdoor1-600.jpg" srcset="assets/img/gallery/outdoor1-600.jpg 600w, assets/img/gallery/outdoor1-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 야외 활동 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>야외 활동</figcaption></figure>
+        <figure class="rv" data-full="assets/img/gallery/outdoor2-1200.jpg"><img src="assets/img/gallery/outdoor2-600.jpg" srcset="assets/img/gallery/outdoor2-600.jpg 600w, assets/img/gallery/outdoor2-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 야외 활동 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>야외 활동</figcaption></figure>
+        <figure class="rv" data-full="assets/img/gallery/prayer-1200.jpg"><img src="assets/img/gallery/prayer-600.jpg" srcset="assets/img/gallery/prayer-600.jpg 600w, assets/img/gallery/prayer-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 기도 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>기도</figcaption></figure>
+        <figure class="rv" data-full="assets/img/gallery/smallgroup-1200.jpg"><img src="assets/img/gallery/smallgroup-600.jpg" srcset="assets/img/gallery/smallgroup-600.jpg 600w, assets/img/gallery/smallgroup-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 조별 나눔 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>조별 나눔</figcaption></figure>
+        <figure class="rv" data-full="assets/img/gallery/recreation-1200.jpg"><img src="assets/img/gallery/recreation-600.jpg" srcset="assets/img/gallery/recreation-600.jpg 600w, assets/img/gallery/recreation-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 레크레이션 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>레크레이션</figcaption></figure>
+        <figure class="rv" data-full="assets/img/gallery/hero-1200.jpg"><img src="assets/img/gallery/hero-600.jpg" srcset="assets/img/gallery/hero-600.jpg 600w, assets/img/gallery/hero-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 예배 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>예배</figcaption></figure>
+        <figure class="rv" data-full="assets/img/gallery/praise-1200.jpg"><img src="assets/img/gallery/praise-600.jpg" srcset="assets/img/gallery/praise-600.jpg 600w, assets/img/gallery/praise-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 예배 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>예배</figcaption></figure>
+        <figure class="rv" data-full="assets/img/gallery/team-1200.jpg"><img src="assets/img/gallery/team-600.jpg" srcset="assets/img/gallery/team-600.jpg 600w, assets/img/gallery/team-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 예배 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>예배</figcaption></figure>
+        <figure class="rv" data-full="assets/img/gallery/youth-1200.jpg"><img src="assets/img/gallery/youth-600.jpg" srcset="assets/img/gallery/youth-600.jpg 600w, assets/img/gallery/youth-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 함께 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>함께</figcaption></figure>
+        <figure class="rv" data-full="assets/img/gallery/young-1200.jpg"><img src="assets/img/gallery/young-600.jpg" srcset="assets/img/gallery/young-600.jpg 600w, assets/img/gallery/young-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 380px" alt="AKC 캠프 말씀 시간" loading="lazy"><span class="zoom-ico" aria-hidden="true">⤢</span><figcaption>말씀</figcaption></figure>
       </div>
-      <p class="rv" style="margin-top:28px;color:rgba(255,255,255,.42);font-size:14px">
-        ※ 보유하신 캠프 사진을 <b style="color:#fff">assets/img</b> 폴더에 넣고
-        각 칸의 자리 표시를 <b style="color:#fff">&lt;img src="assets/img/파일명.jpg" alt="설명"&gt;</b> 로 바꾸면 바로 반영됩니다.
-      </p>
     </div>
   </section>
 
@@ -68,7 +75,6 @@
     </div>
   </section>
 </main>
--->
 
 <div id="site-footer"></div>
 <script src="assets/js/site.js"></script>
