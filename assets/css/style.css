@@ -538,6 +538,34 @@ a.card.card-wide,.card.card-wide{display:grid;grid-template-columns:1.1fr 1fr;ga
 .card-wide .card-photo{margin:0;height:100%;min-height:320px;aspect-ratio:auto;border-radius:0}
 .card-wide>div{padding:40px 40px 40px 0}
 
+/* 2박 3일 일정표 (연합 캠프) */
+.timetable{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:40px;align-items:start}
+.tt-img{margin:0;position:relative;border-radius:var(--radius);overflow:hidden;background:var(--card);cursor:zoom-in;
+  box-shadow:0 16px 48px rgba(var(--shade-rgb),.4)}
+.tt-img img{width:100%;height:auto;transition:transform .6s ease}
+.tt-img:hover img{transform:scale(1.03)}
+.tt-img figcaption{position:absolute;left:14px;bottom:14px;padding:5px 12px;border-radius:4px;
+  background:rgba(var(--ink-rgb),.78);font-size:11px;font-weight:600;letter-spacing:3px}
+.tt-days{display:grid;gap:30px}
+.tt-day h3{display:flex;align-items:center;gap:12px;margin-bottom:12px;font-family:var(--f-display);font-size:var(--fs-5)}
+.tt-day h3 span{font-family:var(--f-body);font-size:11px;font-weight:700;letter-spacing:3px;color:var(--accent)}
+.tt-day h3::after{content:"";flex:1;height:1px;background:var(--line)}
+.tt-day ul{list-style:none;margin:0;padding:0}
+.tt-day li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:11px 14px 11px 30px;position:relative;
+  border-radius:6px;font-size:15px;color:var(--muted);transition:background .2s,color .2s}
+.tt-day li::before{content:"";position:absolute;left:12px;top:20px;width:6px;height:6px;border-radius:50%;background:var(--line)}
+.tt-day li:hover{background:var(--hover);color:var(--white)}
+.tt-day li b{font-weight:500;color:var(--text)}
+.tt-day li small{font-size:13px;font-weight:300;color:var(--muted-2)}
+.tt-day li .tm{font-size:12px;font-weight:700;letter-spacing:1px;color:var(--accent)}
+.tt-day li.k b{font-weight:700;color:var(--white)}
+.tt-day li.k small{color:var(--yellow)}
+.tt-day li.k::before{background:var(--accent-2)}
+@media(max-width:960px){
+  .timetable{grid-template-columns:1fr}
+  .tt-img{max-width:420px}
+}
+
 /* footer */
 .ftr{padding:72px 0 0;background:var(--bg);border-top:1px solid var(--line-2);font-size:14px;color:var(--muted-2)}
 .ftr-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:44px;margin-bottom:56px}
