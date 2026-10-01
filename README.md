@@ -45,7 +45,7 @@
 |---|---|---|
 | `index.html` | `/` | 메인 (캠프의 순간들 사진 띠 포함) |
 | `about.html` | `/about` | AKC 소개 · 지난 캠프 기록(포스터) |
-| `about-program.html` | `/about-program` | 캠프 대표 프로그램 (3가지 시그니처 · 스마트처치) |
+| `about-program.html` | `/about-program` | 캠프 대표 프로그램 (3가지 시그니처 · 슈치 · 컬처 리빌딩) |
 | `camp-spirit.html` | `/camp-spirit` | 영성 캠프 |
 | `camp-spirit-union.html` | `/camp-spirit-union` | 연합 캠프 · 2박 3일 일정표(`#timetable`) |
 | `camp-spirit-youth.html` | `/camp-spirit-youth` | 청소년 캠프 |

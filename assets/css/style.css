@@ -566,6 +566,16 @@ a.card.card-wide,.card.card-wide{display:grid;grid-template-columns:1.1fr 1fr;ga
   .tt-img{max-width:420px}
 }
 
+/* 활동 키워드 (컬처 리빌딩) */
+.chips{list-style:none;margin:0 0 32px;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.chips li{padding:8px 18px;border-radius:999px;border:1px solid rgba(var(--paper-rgb),.22);background:rgba(var(--paper-rgb),.04);
+  font-size:14px;font-weight:500;color:var(--text)}
+.chips li:nth-child(odd){border-color:rgba(var(--accent-hot-2-rgb),.5);color:var(--mint)}
+/* 제목 안의 영문 부제 (REBUILD NIGHT 등) */
+h3 .en{display:block;margin-top:4px;font-style:normal;font-family:var(--f-body);font-size:13px;font-weight:700;letter-spacing:3px;color:var(--yellow)}
+.tt-day li b a{border-bottom:1px solid rgba(var(--paper-rgb),.3)}
+.tt-day li b a:hover{color:var(--yellow);border-color:var(--yellow)}
+
 /* footer */
 .ftr{padding:72px 0 0;background:var(--bg);border-top:1px solid var(--line-2);font-size:14px;color:var(--muted-2)}
 .ftr-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:44px;margin-bottom:56px}
