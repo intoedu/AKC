@@ -122,6 +122,7 @@ assets/
 
 ### 2박 3일 일정표
 - 이미지: `assets/img/schedule.webp` · `assets/img/schedule.jpg` 두 파일을 **같은 이름으로** 덮어쓰면 바뀝니다.
+  - 이미지 크기(가로 · 세로)가 바뀌면 `camp-spirit-union.html`의 일정표 `<img>`에 있는 `width` · `height`도 새 크기로 고쳐 주세요. (지금 1278x1710)
 - 글 버전: `camp-spirit-union.html`의 `id="timetable"` 구역에 날짜별 목록이 있습니다. 이미지를 바꾸면 글 버전도 함께 고쳐 주세요. (휴대폰에서 읽기 쉽고 검색에도 잡히도록 글로도 넣어 두었습니다)
 - `class="k"`가 붙은 줄은 그날의 핵심 순서로 굵게 표시됩니다.
 
