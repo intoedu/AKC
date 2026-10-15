@@ -20,16 +20,21 @@
 <meta name="twitter:description" content="AKC 공지사항과 소식. 2027 겨울 연합 청소년·청년 캠프 신청 안내와 캠프 소식을 전합니다.">
 <meta name="twitter:image" content="https://intoedu.github.io/AKC/assets/img/og.png?v=2">
 <link rel="icon" href="assets/img/favicon.png">
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<meta name="theme-color" content="#1A1A1A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap">
+<script>document.documentElement.classList.add('js');</script>
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="preload" as="image" href="assets/img/site/ph-news.jpg" media="(min-width: 641px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/site/ph-news-m.jpg" media="(max-width: 640px)" fetchpriority="high">
 </head>
 <body>
 <div id="site-header"></div>
 
 <main>
-  <section class="phead">
+  <section class="phead photo ph-news">
     <div class="wrap">
       <p class="crumb">홈 &nbsp;›&nbsp; <b>소식 · 안내</b> &nbsp;›&nbsp; 공지 · 소식</p>
       <h1>공지 · 소식</h1>
@@ -38,17 +43,36 @@
   </section>
 
   <section class="sec">
-    <div class="wrap">
-      <div class="card rv" id="notice" style="border-color:rgba(255,255,85,.45)">
+    <div class="wrap grid">
+      <!-- 일정 변경 공지 (2026. 10. 3. 게시) -->
+      <div class="card rv" id="notice-date" style="border-color:rgba(244,224,77,.45)">
+        <span class="num">NOTICE · 2026.10.03</span>
+        <h3 style="margin-top:8px">2027 겨울 5~7차 캠프 일정 변경 안내</h3>
+        <p>2027 겨울 5~7차 캠프 일정이 아래와 같이 변경되었습니다. 신청하실 때 변경된 날짜를 꼭 확인해 주세요.</p>
+        <div class="tbl-wrap" style="margin-top:20px">
+          <table class="tbl">
+            <tr><th>5차</th><td><b class="hl">2027. 1. 7(목) ~ 9(토)</b> <span style="color:var(--muted-2)">(변경 전 1. 13 ~ 15)</span></td></tr>
+            <tr><th>6차</th><td><b class="hl">2027. 1. 14(목) ~ 16(토)</b> <span style="color:var(--muted-2)">(변경 전 1. 17 ~ 19)</span></td></tr>
+            <tr><th>7차</th><td><b class="hl">2027. 1. 21(목) ~ 23(토)</b> <span style="color:var(--muted-2)">(변경 전 1. 20 ~ 22)</span></td></tr>
+            <tr><th>문의</th><td>010-2977-9586 · AriseKoreaCamp@gmail.com</td></tr>
+          </table>
+        </div>
+        <div class="hero-btns" style="margin-top:24px">
+          <a class="btn btn-y" href="contact">신청 안내 보기</a>
+          <a class="btn btn-o" href="camp-spirit-union#timetable">2박 3일 일정표</a>
+        </div>
+      </div>
+
+      <div class="card rv" id="notice" style="border-color:rgba(244,224,77,.45)">
         <span class="num">NOTICE · 2026.09.17</span>
         <h3 style="margin-top:8px">2027 겨울 5~7차 캠프 신청 기간 안내</h3>
         <p>2027 겨울 5~7차 캠프 신청을 아래 기간 동안 받습니다.</p>
         <div class="tbl-wrap" style="margin-top:20px">
           <table class="tbl">
             <tr><th>신청 기간</th><td><b class="hl">2026. 9. 18(금) 오전 8시</b> ~ <b class="hl">12. 28(월)</b></td></tr>
-            <tr><th>캠프 일정</th><td>5차 2027. 1. 13(수) ~ 15(금) · 6차 1. 17(일) ~ 19(화) · 7차 1. 20(수) ~ 22(금)</td></tr>
+            <tr><th>캠프 일정</th><td>5차 2027. 1. 7(목) ~ 9(토) · 6차 1. 14(목) ~ 16(토) · 7차 1. 21(목) ~ 23(토) <span style="color:var(--muted-2)">(10. 3. 일정 변경 반영)</span></td></tr>
             <tr><th>모집 인원</th><td>차수별 최대 250명</td></tr>
-            <tr><th>참가비</th><td>90,000원 (청소년 · 청년 동일)</td></tr>
+            <tr><th>참가비</th><td>청년 · 청소년 90,000원 · 인솔자 50,000원 (숙식 포함 · 교통 미포함)</td></tr>
             <tr><th>장소</th><td>태안수양관 (충남 태안군 소원면 소근로 630-15)</td></tr>
           </table>
         </div>
@@ -67,6 +91,7 @@
         <h2>전체 소식</h2>
       </div>
       <ul class="nlist rv">
+        <li><a href="#notice-date"><span class="cat y">공지</span><span class="ttl">2027 겨울 5~7차 캠프 일정 변경 안내</span><span class="date">2026.10.03</span></a></li>
         <li><a href="#notice"><span class="cat y">공지</span><span class="ttl">2027 겨울 5~7차 캠프 신청 기간 안내</span><span class="date">2026.09.17</span></a></li>
       </ul>
     </div>

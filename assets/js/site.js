@@ -37,9 +37,7 @@
       name: '소식 · 안내', href: 'news',
       children: [
         { name: '공지 · 소식', href: 'news' },
-        /* [숨김] 갤러리 - 2027 겨울 5~7차 사진을 넣을 때 주석을 풀어주세요
         { name: '갤러리', href: 'gallery' },
-        */
         { name: '오시는 길', href: 'location' },
         { name: '자주 묻는 질문', href: 'faq' }
       ]
@@ -141,8 +139,7 @@
         '</ul></div>' +
         '<div><h4>안내</h4><ul>' +
           '<li><a href="news">공지 · 소식</a></li>' +
-          // [숨김] 갤러리 - 2027 겨울 5~7차 사진을 넣을 때 주석을 풀어주세요
-          // '<li><a href="gallery">갤러리</a></li>' +
+          '<li><a href="gallery">갤러리</a></li>' +
           '<li><a href="location">오시는 길</a></li>' +
           '<li><a href="faq">자주 묻는 질문</a></li>' +
         '</ul></div>' +
@@ -158,11 +155,17 @@
       '<span>대표 박지민</span></div>' +
     '</div></footer>';
 
+  /* 휴대폰 하단 고정 신청 버튼 (신청 · 문의 페이지에서는 본문 버튼이 있으므로 빼고) */
+  var mobileCtaHTML = '<div class="mobile-cta"><a href="' + CTA.href + '">캠프 신청하기 →</a></div>';
+
   function mount() {
     var h = document.getElementById('site-header');
     var f = document.getElementById('site-footer');
     if (h) h.outerHTML = headerHTML;
-    if (f) f.outerHTML = footerHTML;
+    if (f) {
+      f.outerHTML = footerHTML + (here === pageKey(CTA.href) ? '' : mobileCtaHTML);
+      if (here !== pageKey(CTA.href)) document.body.classList.add('has-mcta');
+    }
 
     var burger = document.getElementById('burger');
     var mnav = document.getElementById('mnav');
@@ -207,6 +210,75 @@
     } else {
       lazyBg.forEach(function (el) { el.classList.add('bg-in'); });
     }
+
+    /* 사진 크게 보기 - data-full 이 붙은 사진을 누르면 큰 사진을 띄웁니다 */
+    var shots = document.querySelectorAll('figure[data-full]');
+    if (shots.length) {
+      var lb = document.createElement('div');
+      lb.className = 'lightbox';
+      lb.setAttribute('role', 'dialog');
+      lb.setAttribute('aria-modal', 'true');
+      lb.setAttribute('aria-label', '사진 크게 보기');
+      lb.innerHTML = '<button class="lightbox-close" type="button" aria-label="닫기">&times;</button>' +
+        '<img alt=""><div class="lightbox-cap"></div>';
+      document.body.appendChild(lb);
+      var lbImg = lb.querySelector('img');
+      var lbCap = lb.querySelector('.lightbox-cap');
+      var lastFocus = null;
+      var closeLb = function () {
+        lb.classList.remove('open');
+        lbImg.removeAttribute('src');
+        document.body.style.overflow = '';
+        if (lastFocus) lastFocus.focus();
+      };
+      lb.addEventListener('click', closeLb);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lb.classList.contains('open')) closeLb();
+      });
+      shots.forEach(function (fig) {
+        fig.setAttribute('tabindex', '0');
+        fig.setAttribute('role', 'button');
+        var open = function () {
+          if (fig.closest('.hscroll.moved')) return;
+          var cap = fig.querySelector('figcaption');
+          var img = fig.querySelector('img');
+          lbImg.src = fig.getAttribute('data-full');
+          lbImg.alt = img ? img.alt : '';
+          lbCap.textContent = cap ? cap.textContent : '';
+          lastFocus = fig;
+          lb.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          lb.querySelector('.lightbox-close').focus();
+        };
+        fig.addEventListener('click', open);
+        fig.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+        });
+      });
+    }
+
+    /* 가로 사진 띠 - 마우스로 끌어서 넘기기 (터치는 기본 스크롤 사용) */
+    document.querySelectorAll('.hscroll').forEach(function (el) {
+      var down = false, startX = 0, startLeft = 0;
+      el.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'mouse') return;
+        down = true; startX = e.clientX; startLeft = el.scrollLeft;
+        el.classList.remove('moved');
+      });
+      window.addEventListener('pointermove', function (e) {
+        if (!down) return;
+        var dx = e.clientX - startX;
+        if (Math.abs(dx) > 5) el.classList.add('drag', 'moved');
+        el.scrollLeft = startLeft - dx;
+      });
+      window.addEventListener('pointerup', function () {
+        if (!down) return;
+        down = false;
+        el.classList.remove('drag');
+        /* 끌기를 마친 직후의 클릭은 사진 열기로 치지 않습니다 */
+        setTimeout(function () { el.classList.remove('moved'); }, 0);
+      });
+    });
   }
 
   /* 이 스크립트는 각 페이지 맨 아래에 있어 헤더·푸터 자리가 이미 있습니다.
