@@ -576,6 +576,52 @@ h3 .en{display:block;margin-top:4px;font-style:normal;font-family:var(--f-body);
 .tt-day li b a{border-bottom:1px solid rgba(var(--paper-rgb),.3)}
 .tt-day li b a:hover{color:var(--yellow);border-color:var(--yellow)}
 
+/* 강사진 (차수별) — 메인: .spk-cols (차수별 세로 칸) · 연합 캠프: .spk-group + .spk-grid (큰 사진 카드)
+   차수 색은 일정 카드(.sched)와 같게: 5차 민트 · 6차 옐로우 · 7차 화이트 */
+.spk-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.spk-col{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px 12px}
+.spk-col::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--mint)}
+.spk-col.c6::before{background:var(--yellow)}
+.spk-col.c7::before{background:var(--white)}
+.spk-col-head,.spk-group-head{display:flex;align-items:baseline;gap:12px}
+.spk-col-head b,.spk-group-head b{font-family:var(--f-display);font-size:22px;font-weight:400;color:var(--mint)}
+.c6 .spk-col-head b,.c6 .spk-group-head b{color:var(--yellow)}
+.c7 .spk-col-head b,.c7 .spk-group-head b{color:var(--white)}
+.spk-col-head span,.spk-group-head span{font-size:14px;color:var(--muted-2)}
+.spk-list{list-style:none;margin:10px 0 0;padding:0}
+.spk-list>li{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:center;padding:14px 0;border-top:1px solid var(--line-2)}
+.spk-list>li:first-child{border-top:0}
+.spk-list figure{margin:0;width:64px;aspect-ratio:4/5;border-radius:10px;overflow:hidden;background:var(--soft)}
+.spk-list img,.spk figure img{width:100%;height:100%;object-fit:cover}
+.spk-list h3{font-family:var(--f-display);font-size:20px;line-height:1.3}
+.spk-list p{margin-top:2px;color:var(--muted);font-size:13px;font-weight:300;line-height:1.55}
+.role{font-family:var(--f-body);font-size:13px;font-weight:500;letter-spacing:.3px;color:var(--accent-2)}
+/* 사진이 아직 없을 때 */
+.spk-ph{display:grid;place-items:center;text-align:center;background:var(--soft)!important;color:var(--muted-2);font-size:11px;line-height:1.4}
+.spk-group+.spk-group{margin-top:56px}
+.spk-group-head{padding-bottom:14px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.spk-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.spk{overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);transition:transform .3s,box-shadow .3s}
+.spk:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+.spk figure{margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--soft)}
+.spk .spk-ph{font-size:13px}
+.spk-body{padding:20px 22px 24px}
+.spk h3{font-family:var(--f-display);font-size:var(--fs-5);line-height:1.3}
+.spk-bio{list-style:none;margin:10px 0 0;padding:0;color:var(--muted);font-size:14px;font-weight:300;line-height:1.7}
+@media(max-width:760px){
+  .spk-cols{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  /* 휴대폰: 연합 캠프 강사 카드를 '사진 왼쪽 · 소개 오른쪽' 가로형으로 */
+  .spk-grid{grid-template-columns:1fr;gap:12px}
+  .spk{display:grid;grid-template-columns:104px 1fr;align-items:center}
+  .spk:hover{transform:none}
+  .spk figure{align-self:stretch;height:100%;aspect-ratio:auto;min-height:130px}
+  .spk-body{padding:16px 18px}
+  .spk-bio{margin-top:6px;font-size:13px;line-height:1.6}
+  .spk-group+.spk-group{margin-top:40px}
+}
+
 /* footer */
 .ftr{padding:72px 0 0;background:var(--bg);border-top:1px solid var(--line-2);font-size:14px;color:var(--muted-2)}
 .ftr-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:44px;margin-bottom:56px}

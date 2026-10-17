@@ -73,6 +73,7 @@ assets/
     og.png               공유 미리보기 이미지 (1200x630)
     schedule.webp · .jpg 2박 3일 일정표 (연합 캠프 페이지)
     posters/             포스터 (poster-5-7 · past-1-3 · past-math)
+    speakers/            강사진 사진 (차수-이름.jpg · .webp 640x800 / 메인용 -s 160x200)
     site/                배경 · 카드 사진 (데스크톱용 / 파일명 끝 -m 은 휴대폰용)
     gallery/             갤러리 사진 (이름-600.jpg 작은 것 / 이름-1200.jpg 큰 것)
 2027-겨울캠프-안내.md    캠프 안내 문서
@@ -125,6 +126,17 @@ assets/
   - 이미지 크기(가로 · 세로)가 바뀌면 `camp-spirit-union.html`의 일정표 `<img>`에 있는 `width` · `height`도 새 크기로 고쳐 주세요. (지금 1278x1710)
 - 글 버전: `camp-spirit-union.html`의 `id="timetable"` 구역에 날짜별 목록이 있습니다. 이미지를 바꾸면 글 버전도 함께 고쳐 주세요. (휴대폰에서 읽기 쉽고 검색에도 잡히도록 글로도 넣어 두었습니다)
 - `class="k"`가 붙은 줄은 그날의 핵심 순서로 굵게 표시됩니다.
+
+### 강사진
+- **두 곳**에 같은 내용이 있습니다. 둘 다 고쳐 주세요.
+  - 메인 `index.html`의 `id="speakers"` — 차수별 칸, 강사마다 작은 사진 · 이름 · 대표 직함 한 줄
+  - 연합 캠프 `camp-spirit-union.html`의 `id="speakers"` — 차수별 큰 사진 카드 · 소개 전체
+- 소개 문구는 2027 겨울 리플렛 기준입니다.
+- **사진**: `assets/img/speakers/`에 4:5 비율로 두 크기를 넣습니다. (예: `5-park-sunghoon.jpg` · `.webp` 640x800, `5-park-sunghoon-s.jpg` · `.webp` 160x200)
+  - 배경을 오려 낸(투명) 사진은 사이트 톤에 맞춰 짙은 회색 그라데이션 배경을 깔아 만듭니다. (예: `6-cho-jihyuk`)
+  - 위 여백이 부족한 사진은 맨 윗부분 색으로 위쪽을 이어 붙여 다른 사진과 머리 위치를 맞춥니다. (예: `5-park-yoonhwan` · `7-jang-dujin`)
+- 강사를 바꾸면 사진이 없는 동안 `<figure class="spk-ph" aria-hidden="true"><span>사진<br>준비 중</span></figure>` 칸을 쓰고, 사진이 오면 옆 강사처럼 `<figure><picture>…</picture></figure>`로 바꿉니다.
+- 구역을 숨기려면 `<section … id="speakers">`에 `hidden`을 붙입니다. (숨기면 사진도 내려받지 않습니다)
 
 ### 갤러리 사진 추가
 1. 사진을 가로 **600px**(목록용)과 **1200px**(크게 보기용) 두 장의 JPG로 만들어 `assets/img/gallery/`에 넣습니다. (예: `camp5-worship-600.jpg`, `camp5-worship-1200.jpg`)
