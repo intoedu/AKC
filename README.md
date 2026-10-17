@@ -134,8 +134,9 @@ assets/
 - 소개 문구는 2027 겨울 리플렛 기준입니다.
 - **사진**: `assets/img/speakers/`에 4:5 비율로 두 크기를 넣습니다. (예: `5-park-sunghoon.jpg` · `.webp` 640x800, `5-park-sunghoon-s.jpg` · `.webp` 160x200)
   - 배경을 오려 낸(투명) 사진은 사이트 톤에 맞춰 짙은 회색 그라데이션 배경을 깔아 만듭니다. (예: `6-cho-jihyuk`)
-- 사진이 아직 없는 강사는 `class="spk-ph"`(사진 준비 중) 칸으로 되어 있습니다. 사진을 넣으면 옆 강사처럼 `<figure><picture>…</picture></figure>`로 바꿉니다.
-- **지금은 두 구역 모두 `hidden`으로 숨겨 둔 상태**입니다. 9명 사진이 모두 들어오면 `hidden`을 지우고, 각 구역 위 주석대로 아래 구역의 `sec` · `sec alt`를 바꿔 배경이 번갈아 보이게 합니다.
+  - 위 여백이 부족한 사진은 맨 윗부분 색으로 위쪽을 이어 붙여 다른 사진과 머리 위치를 맞춥니다. (예: `5-park-yoonhwan` · `7-jang-dujin`)
+- 강사를 바꾸면 사진이 없는 동안 `<figure class="spk-ph" aria-hidden="true"><span>사진<br>준비 중</span></figure>` 칸을 쓰고, 사진이 오면 옆 강사처럼 `<figure><picture>…</picture></figure>`로 바꿉니다.
+- 구역을 숨기려면 `<section … id="speakers">`에 `hidden`을 붙입니다. (숨기면 사진도 내려받지 않습니다)
 
 ### 갤러리 사진 추가
 1. 사진을 가로 **600px**(목록용)과 **1200px**(크게 보기용) 두 장의 JPG로 만들어 `assets/img/gallery/`에 넣습니다. (예: `camp5-worship-600.jpg`, `camp5-worship-1200.jpg`)
