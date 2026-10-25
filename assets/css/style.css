@@ -622,6 +622,9 @@ h3 .en{display:block;margin-top:4px;font-style:normal;font-family:var(--f-body);
   .spk-group+.spk-group{margin-top:40px}
 }
 
+/* 날짜 · 금액처럼 중간에서 끊기면 안 되는 덩어리 */
+.nw{white-space:nowrap}
+
 /* footer */
 .ftr{padding:72px 0 0;background:var(--bg);border-top:1px solid var(--line-2);font-size:14px;color:var(--muted-2)}
 .ftr-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:44px;margin-bottom:56px}
