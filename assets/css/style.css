@@ -420,6 +420,8 @@ figure:hover>.zoom-ico{opacity:1}
   border:1px solid var(--line);aspect-ratio:1/1.414;background:var(--soft)}
 .poster-slot img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:contain;background:var(--soft)}
 .poster-slot .ph span{line-height:1.6}
+/* 포스터 대체 칸: 평소에는 숨기고, 그림을 못 불러왔을 때만(onerror) 보입니다 */
+.ph[hidden]{display:none}
 
 /* 캠프 주제 REBUILD */
 .theme{display:grid;grid-template-columns:340px 1fr;gap:64px;align-items:center}
