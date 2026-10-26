@@ -137,7 +137,8 @@ assets/
 - 소개 문구는 2027 겨울 리플렛 기준입니다.
 - **사진**: `assets/img/speakers/`에 4:5 비율로 두 크기를 넣습니다. (예: `5-park-sunghoon.jpg` · `.webp` 640x800, `5-park-sunghoon-s.jpg` · `.webp` 160x200)
   - 배경을 오려 낸(투명) 사진은 사이트 톤에 맞춰 짙은 회색 그라데이션 배경을 깔아 만듭니다. (예: `6-cho-jihyuk`)
-  - 위 여백이 부족한 사진은 맨 윗부분 색으로 위쪽을 이어 붙여 다른 사진과 머리 위치를 맞춥니다. (예: `5-park-yoonhwan` · `7-jang-dujin`)
+  - 흰색 · 단색 배경 사진은 배경만 같은 그라데이션으로 바꿉니다. (예: `5-park-yoonhwan` · `7-rino`)
+  - 위 여백이 부족한 사진은 맨 윗부분 색으로 위쪽을 이어 붙여 다른 사진과 머리 위치를 맞춥니다. (예: `7-jang-dujin`)
 - 강사를 바꾸면 사진이 없는 동안 `<figure class="spk-ph" aria-hidden="true"><span>사진<br>준비 중</span></figure>` 칸을 쓰고, 사진이 오면 옆 강사처럼 `<figure><picture>…</picture></figure>`로 바꿉니다.
 - 구역을 숨기려면 `<section … id="speakers">`에 `hidden`을 붙입니다. (숨기면 사진도 내려받지 않습니다)
 
