@@ -276,6 +276,8 @@ a.card{display:block}
 .sched .it:nth-child(3) .no{color:var(--white)}
 .sched .dt{margin-top:6px;font-family:var(--f-display);font-size:clamp(26px,2.6vw,32px);line-height:1.2}
 .sched .dw{margin-top:8px;color:var(--muted);font-size:14px;font-weight:300}
+.sched .dv{margin-top:10px;padding-top:10px;border-top:1px solid var(--line-2);color:var(--text);font-size:14px;font-weight:500}
+.sched .dv small{color:var(--yellow);font-size:12px;font-weight:700}
 
 /* table */
 .tbl{width:100%;border-collapse:collapse;font-size:15px}
@@ -628,6 +630,10 @@ h3 .en{display:block;margin-top:4px;font-style:normal;font-family:var(--f-body);
 .nw{white-space:nowrap}
 
 /* footer */
+.ftr-note{margin:0 0 28px;padding:16px 20px;border:1px solid var(--line);border-radius:12px;background:rgba(var(--paper-rgb),.03);
+  color:var(--muted);font-size:13px;line-height:1.75}
+.ftr-note a{color:var(--text);border-bottom:1px solid rgba(var(--paper-rgb),.3)}
+.ftr-note a:hover{color:var(--yellow);border-color:var(--yellow)}
 .ftr{padding:72px 0 0;background:var(--bg);border-top:1px solid var(--line-2);font-size:14px;color:var(--muted-2)}
 .ftr-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:44px;margin-bottom:56px}
 .ftr p{line-height:1.85}
