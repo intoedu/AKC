@@ -147,10 +147,13 @@
           '<li>대표 연락처 · <a href="tel:01029779586">010-2977-9586</a></li>' +
           '<li><a href="mailto:AriseKoreaCamp@gmail.com">AriseKoreaCamp@gmail.com</a></li>' +
           '<li><a href="https://www.instagram.com/arisekoreacamp" target="_blank" rel="noopener">Instagram @arisekoreacamp</a></li>' +
-          '<li>캠프 장소 · 태안수양관 (자체 운영 시설)</li>' +
+          '<li>캠프 장소 · 5 · 7차 태안수양관 / 6차 강화 엘벧엘 생명교회 (<a href="location">오시는 길</a>)</li>' +
           '<li><a href="contact">신청 · 문의하기</a></li>' +
         '</ul></div>' +
       '</div>' +
+      /* 변동 안내 — 캠프 준비 과정에서 세부 내용이 계속 조정되므로 모든 페이지 하단에 표시 */
+      '<p class="ftr-note">※ 캠프의 세부 일정 · 프로그램 · 강사진 · 장소는 준비 과정에서 바뀔 수 있습니다. ' +
+        '바뀌는 내용은 <a href="news">공지 · 소식</a>과 <a href="https://www.instagram.com/arisekoreacamp" target="_blank" rel="noopener">인스타그램(@arisekoreacamp)</a>으로 먼저 안내드립니다.</p>' +
       '<div class="ftr-bot"><span>&copy; ' + new Date().getFullYear() + ' AKC (Arise Korea Camp). All rights reserved.</span>' +
       '<span>대표 박지민</span></div>' +
     '</div></footer>';
