@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2027 겨울 AKC 캠프 신청서 | AKC · Arise Korea Camp</title>
+<!-- 신청서 바로가기 짧은 주소: https://intoedu.github.io/AKC/apply
+     들어오면 syuchi 신청서로 바로 이동합니다. (카드뉴스 · 인스타 프로필 링크 · QR용)
+     신청서 주소가 바뀌면 아래 APPLY_URL과 contact.html의 id="applyBtn" href를 함께 고쳐 주세요.
+     마지막 차수(7차) 마감이 지나면 이동하지 않고 마감 안내를 보여 줍니다. -->
+<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AKC · Arise Korea Camp">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="2027 겨울 AKC 캠프 신청서">
+<meta property="og:description" content="Arise Korea Camp 2027 겨울 5~7차 캠프 신청서. 신청 마감 5차 12. 23(수) · 6차 12. 30(수) · 7차 1. 6(수).">
+<meta property="og:url" content="https://intoedu.github.io/AKC/apply">
+<meta property="og:image" content="https://intoedu.github.io/AKC/assets/img/og.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://intoedu.github.io/AKC/assets/img/og.png?v=2">
+<link rel="icon" href="assets/img/favicon.png">
+<meta name="theme-color" content="#1A1A1A">
+<noscript><meta http-equiv="refresh" content="0; url=https://app.syuchi.com/events/c0000000-0000-4000-8000-000000000001"></noscript>
+<script>
+(function () {
+  var APPLY_URL = 'https://app.syuchi.com/events/c0000000-0000-4000-8000-000000000001';
+  var CLOSE = new Date('2027-01-06T23:59:59+09:00').getTime();   // 7차 마감
+  if (Date.now() <= CLOSE) { location.replace(APPLY_URL); return; }
+  document.documentElement.className = 'closed';
+})();
+</script>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:#1A1A1A;color:#F2F2F2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
+    text-align:center;word-break:keep-all;padding:24px}
+  h1{font-size:22px;margin:0 0 12px;color:#fff}
+  p{margin:0 0 28px;color:#C9C9C9;line-height:1.8}
+  a{display:inline-block;background:#F4E04D;color:#1A1A1A;font-weight:900;padding:16px 32px;border-radius:4px;text-decoration:none}
+  .closed .open,.open-only{display:none}
+  .closed .open-only{display:block}
+</style>
+</head>
+<body>
+  <main class="open">
+    <h1>신청서로 이동합니다</h1>
+    <p>자동으로 넘어가지 않으면 아래 버튼을 눌러 주세요.</p>
+    <a href="https://app.syuchi.com/events/c0000000-0000-4000-8000-000000000001">신청서 작성하기 →</a>
+  </main>
+  <main class="open-only">
+    <h1>2027 겨울 캠프 신청이 마감되었습니다</h1>
+    <p>함께해 주셔서 감사합니다. 캠프 소식은 홈페이지에서 확인해 주세요.</p>
+    <a href="./">AKC 홈페이지로 →</a>
+  </main>
+</body>
+</html>
